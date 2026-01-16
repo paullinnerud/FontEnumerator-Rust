@@ -13,6 +13,7 @@ Thumbs.db
 
 # Test artifacts
 *.png
+!docs/*.png
 *.log
 
 # Claude Code settings
