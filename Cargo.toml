@@ -1,0 +1,30 @@
+[package]
+name = "fontenum"
+version = "0.1.0"
+edition = "2021"
+description = "A Windows font enumeration tool using GDI, DirectWrite, and FontSet APIs"
+license = "MIT"
+readme = "README.md"
+keywords = ["windows", "fonts", "directwrite", "gdi", "gui"]
+categories = ["gui", "os::windows-apis"]
+
+[dependencies.windows]
+version = "0.58"
+features = [
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_Controls",
+    "Win32_Graphics_Gdi",
+    "Win32_Graphics_DirectWrite",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Com",
+    "Win32_Globalization",
+]
+
+[profile.release]
+opt-level = 3
+lto = true
+
+[[bin]]
+name = "fontenum"
+path = "src/main.rs"
